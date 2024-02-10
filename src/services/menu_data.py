@@ -2,6 +2,7 @@ import csv
 from models.dish import Dish
 from models.ingredient import Ingredient
 
+
 # Req 3
 class MenuData:
     def __init__(self, source_path: str) -> None:
@@ -17,12 +18,14 @@ class MenuData:
 
                 dish = self.verify_dishes(name)
                 if dish:
-                    dish.add_ingredient_dependency(Ingredient(ingredient), int(amount))
-                else: 
+                    dish.add_ingredient_dependency(
+                        Ingredient(ingredient), int(amount))
+                else:
                     dish = Dish(name, float(price))
-                    dish.add_ingredient_dependency(Ingredient(ingredient), int(amount))
+                    dish.add_ingredient_dependency(
+                        Ingredient(ingredient), int(amount))
                     self.dishes.add(dish)
-    
+
     def verify_dishes(self, name):
         for dish in self.dishes:
             if dish.name == name:

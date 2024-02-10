@@ -20,4 +20,3 @@ def test_ingredient():
         Restriction.ANIMAL_MEAT}
 
     assert sal.__repr__() == "Ingredient('sal')"
-
